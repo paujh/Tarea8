@@ -35,15 +35,12 @@ class Inventario:
 
 #D)  
   def guardarLista(self,archivo):
-    archivo = open(archivo+".txt","w")
-    for linea in archivo:
-      datos = linea.split()
-      cadena = datos[0] + "\n"
-      archivo.write(cadena)
-    with open("E10.txt","r") as archivo10:
-      for linea in archivo10:
-        print(linea.rstrip())
-    archivo.close()
+    archivo1 = open(archivo,"w")
+    cadena = ""
+    for i in range(0,len(self.listaProductos)):
+      cadena = cadena + self.listaProductos[i] + "\n"
+    archivo1.write(cadena)
+    archivo1.close()
 
 listaP=["blusa","pantalon","playera","zapatos","tenis"]
 listaC=[3,5,6,8,2]
